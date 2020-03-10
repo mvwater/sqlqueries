@@ -76,3 +76,15 @@ Use the same degree of specificity, if not more, when merging a pull request, as
   + `brydon1-signup-modal`
   + `canfield1-js`
   + `canfield1-security-search`
+
+### SQL File Naming
+
+- Include the type of T-SQL file that you're adding to the beginning of the filename. For example:
+  + `microsoftsql_xyz.sql` for Microsoft SQL Server
+  + `mysql_xyz.sql` for MySQL
+  + `postgresql_xyz.sql` for PostgreSQL
+  + `oraclesql_xyz.sql` for Oracle SQL
+- As shown above, delimit your filenames with an underscore.
+- Name your SQL files with the database name, not `xyz`. Be succinct, but descriptive.
+  + `microsoftsql_soccer.sql` is a good name.
+  + `microsoftsql_db.sql` is a bad name.
