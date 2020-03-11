@@ -1,10 +1,10 @@
--- Microsoft SQL Server Dump
+-- Microsoft SQL Server Data Dump
+-- https://www.microsoft.com/en-us/sql-server/sql-server-downloads
 --
 -- Host: localhost:3306
--- Generation Time: Mar 11, 2020 at 01:51 AM
+-- Generation Time: Mar 11, 2020 at 01:50 AM
 -- Server version: 5.7.29-0ubuntu0.18.04.1
-
-SET time_zone = "+00:00";
+-- PHP Version: 7.2.24-0ubuntu0.18.04.3
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -22,14 +22,42 @@ SET time_zone = "+00:00";
 -- Table structure for table "accounts"
 --
 
-CREATE TABLE "accounts" ;
+CREATE TABLE accounts (
+  "AccountNo" varchar(8) NOT NULL,
+  "AcctStatus" varchar(1) DEFAULT NULL,
+  "SrtDate" varchar(10) DEFAULT NULL,
+  "TName" varchar(20) DEFAULT NULL,
+  "TAdd1" varchar(26) DEFAULT NULL,
+  "TAdd2" varchar(27) DEFAULT NULL,
+  "TAdd3" varchar(10) DEFAULT NULL,
+  "TPhone" varchar(12) DEFAULT NULL,
+  "TEmail" varchar(31) DEFAULT NULL,
+  "TCity" varchar(12) DEFAULT NULL,
+  "TState" varchar(2) DEFAULT NULL,
+  "TZip" int DEFAULT NULL,
+  "TSScan" varchar(10) DEFAULT NULL,
+  "TDL#" varchar(10) DEFAULT NULL,
+  "TCell#" varchar(10) DEFAULT NULL,
+  "TDoB" varchar(10) DEFAULT NULL,
+  "LName" varchar(20) DEFAULT NULL,
+  "LAdd1" varchar(15) DEFAULT NULL,
+  "LAdd2" varchar(10) DEFAULT NULL,
+  "LAdd3" varchar(10) DEFAULT NULL,
+  "LPhone" varchar(10) DEFAULT NULL,
+  "LEmail" varchar(35) DEFAULT NULL,
+  "LCity" varchar(12) DEFAULT NULL,
+  "LSt" varchar(2) DEFAULT NULL,
+  "LZip" int DEFAULT NULL,
+  "LSScan" varchar(10) DEFAULT NULL,
+  "LDL#" varchar(10) DEFAULT NULL,
+  "LDoB" varchar(10) DEFAULT NULL
+);
 
 --
 -- Dumping data for table "accounts"
 --
 
-SET IDENTITY_INSERT "accounts" ON ;
-INSERT INTO "accounts" ("AccountNo", "AcctStatus", "SrtDate", "TName", "TAdd1", "TAdd2", "TAdd3", "TPhone", "TEmail", "TCity", "TState", "TZip", "TSScan", "TDL#", "TCell#", "TDoB", "LName", "LAdd1", "LAdd2", "LAdd3", "LPhone", "LEmail", "LCity", "LSt", "LZip", "LSScan", "LDL#", "LDoB") VALUES
+INSERT INTO accounts ("AccountNo", "AcctStatus", "SrtDate", "TName", "TAdd1", "TAdd2", "TAdd3", "TPhone", "TEmail", "TCity", "TState", "TZip", "TSScan", "TDL#", "TCell#", "TDoB", "LName", "LAdd1", "LAdd2", "LAdd3", "LPhone", "LEmail", "LCity", "LSt", "LZip", "LSScan", "LDL#", "LDoB") VALUES
 ('01-97-3', 'A', '05-12-1980', 'Marline Pentin', '175 Red Cloud Center', '3782 Aberg Junction', '', '366-122-8380', 'mpentin18@meetup.com', 'MOUNT VERNON', 'OH', 43050, '', '', '', '', 'CITY OF MOUNT VERNON', '47 N GAY STREET', '', '', '', 'waterclkaccting@mountvernonohio.org', 'MOUNT VERNON', 'OH', 43050, '', '', ''),
 ('03-02-4', 'A', '08-29-2017', 'Shayne Smolan', '7223 Moulton Circle', '', '', '104-957-8948', 'ssmolan5@google.de', 'MOUNT VERNON', 'OH', 43050, '', '', '', '', 'CITY OF MOUNT VERNON', '8 N GAY STREET', '', '', '', 'waterclkaccting@mountvernonohio.org', 'MOUNT VERNON', 'OH', 43050, '', '', ''),
 ('03-45-2', 'I', '02-26-2019', 'Nikolai Rushman', '63 Miller Pass', '65398 Carpenter Plaza', '', '308-771-6797', 'nrushman17@woothemes.com', 'MOUNT VERNON', 'OH', 43050, '', '', '', '', 'CITY OF MOUNT VERNON', '46 N GAY STREET', '', '', '', 'waterclkaccting@mountvernonohio.org', 'MOUNT VERNON', 'OH', 43050, '', '', ''),
@@ -79,23 +107,19 @@ INSERT INTO "accounts" ("AccountNo", "AcctStatus", "SrtDate", "TName", "TAdd1", 
 ('80-98-7', 'A', '01-21-1979', 'Bobette Queenborough', '7046 Chive Center', '', '', '115-257-0631', 'bqueenborough3@ning.com', 'MOUNT VERNON', 'OH', 43050, '', '', '', '', 'CITY OF MOUNT VERNON', '6 N GAY STREET', '', '', '', 'waterclkaccting@mountvernonohio.org', 'MOUNT VERNON', 'OH', 43050, '', '', ''),
 ('83-48-1', 'A', '10-01-1999', 'Kennedy Tuffell', '02 Lighthouse Bay Park', '', '', '833-433-7925', 'ktuffellt@shutterfly.com', 'MOUNT VERNON', 'OH', 43050, '', '', '', '', 'CITY OF MOUNT VERNON', '32 N GAY STREET', '', '', '', 'waterclkaccting@mountvernonohio.org', 'MOUNT VERNON', 'OH', 43050, '', '', ''),
 ('83-77-4', 'A', '06-30-1983', 'Cherri Ivetts', '26920 Springs St', '', '', '829-242-5669', 'civetts2@friendfeed.com', 'MOUNT VERNON', 'OH', 43050, '', '', '', '', 'CITY OF MOUNT VERNON', '5 N GAY STREET', '', '', '', 'waterclkaccting@mountvernonohio.org', 'MOUNT VERNON', 'OH', 43050, '', '', '');
-
-SET IDENTITY_INSERT "accounts" OFF;
-
 -- --------------------------------------------------------
-
 --
 -- Table structure for table "comments"
 --
-
-CREATE TABLE "comments" ;
-
+CREATE TABLE "comments" (
+  "cid" int NOT NULL,
+  "Address" varchar(26) DEFAULT NULL,
+  "Comments" varchar(109) DEFAULT NULL
+);
 --
 -- Dumping data for table "comments"
 --
-
-SET IDENTITY_INSERT "comments" ON ;
-INSERT INTO "comments" ("cid", "Address", "Comments") VALUES
+INSERT INTO comments ("cid", "Address", "Comments") VALUES
 (1, '85 Delaware Prk', 'ADDED A CLINTON TWP UNIT--MGO'),
 (2, '85 Delaware Prk', '9.27.2012 440360 TEST OK 3/4 INCH CONTAINMENT IN BOILER ROOM'),
 (3, '6284 Browning Plaza', '*******6* IS TESTED BY GRINNEL'),
@@ -109,7 +133,7 @@ INSERT INTO "comments" ("cid", "Address", "Comments") VALUES
 (11, '8 Gerald Crossing', '159920 DOMESTIC MAIN 3 INCH TEST OK 11.2.2015'),
 (12, '72543 Del Sol Road', ''),
 (13, '0759 Glacier Hill Park', '11-17-17 CHANGED START DATE FROM 09-10-1997 AND MOVED FROM BOOK 101 TO 34 SO BILL WILL GENERATE --MGO'),
-(14, '0 Cottonwood Parkway', 'WATTS 3\" #159920, WATTS 1\" #494314, WATTS 1\" #494305, WATTS 3\" #159923, WATTS 1/2\" #305153 TEST OK 1/9/19--JP'),
+(14, '0 Cottonwood Parkway', '305153 TEST OK 1/9/19--JP'),
 (15, '1 Florence Hill', 'BACKFLOW #345741 WASTE BACKWASH FOR SLUDGE REMOVED AS STYLE CHANGED & THERE IS NO FLUSHWATER SYSTEM. 1/18/19'),
 (16, '582 Village Green Road', 'BACKFLOW #440360 BOILDER LOOP REMOVED AS WAS NEVER PERMENANTLY ATTACHED. 1/18/19'),
 (17, '37701 Bonner Hill', 'WATER STUFF'),
@@ -149,8 +173,19 @@ INSERT INTO "comments" ("cid", "Address", "Comments") VALUES
 (51, '1 Cardinal Court', 'THIS IS A COMMENT FOR 1 CARDINAL COURT'),
 (52, '37 Milwaukee Pass', 'THIS IS A COMMENT FOR 37 MILWAUKEE PASS');
 
-SET IDENTITY_INSERT "comments" OFF;
+--
+-- Indexes for dumped tables
+--
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+--
+-- Indexes for table "accounts"
+--
+ALTER TABLE "accounts"
+  ADD PRIMARY KEY ("AccountNo");
+
+--
+-- Indexes for table "comments"
+--
+ALTER TABLE "comments"
+  ADD PRIMARY KEY ("cid");
+
