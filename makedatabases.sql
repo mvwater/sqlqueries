@@ -1,0 +1,4 @@
+-- ONLY RUN THIS FILE ONCE!
+
+MAKE DATABASE mvwater;
+USE mvwater;
